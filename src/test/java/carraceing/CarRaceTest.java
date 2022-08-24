@@ -4,7 +4,6 @@ package carraceing;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-import org.assertj.core.api.AssertProvider;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -32,11 +31,17 @@ class CarRaceTest {
 
     @ParameterizedTest(name = "값이 4 이상이면 전진한다")
     @ValueSource(ints = {
-        4, 5, 6
+        4, 5, 6, 7, 8, 9
     })
     void random_value_is_four_or_higher_move_forward(int input) {
-        assertThat(input).isGreaterThan(4);
-
+        assertThat(input).isGreaterThan(3);
     }
 
+    @ParameterizedTest(name = "값이 4이하면 이동하지 않는다.")
+    @ValueSource(ints = {
+        1, 2, 3
+    })
+    void random_value_is_three_or_down_not_move_forward(int input) {
+        assertThat(input).isLessThan(4);
+    }
 }
