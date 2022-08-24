@@ -1,40 +1,32 @@
 package carraceing;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Car {
 
-    private final Random random = new Random();
-    private final List<Integer> cars = new ArrayList<>();
-    private final int carCount;
+    private int carCount;
+    private int attempts;
 
-    public Car(int carCount) {
+    public Car(int carCount, int attempts){
         if (carCount == 0) {
-            throw new IllegalArgumentException("0이 입력되면 예외가 발생한다.");
+            throw new IllegalArgumentException();
         }
-        if (Character.isDigit(carCount)) {
-            throw new IllegalArgumentException("문자열이 입력되면 예외가 발생한다.");
+        if (attempts == 0) {
+            throw new IllegalArgumentException();
         }
         this.carCount = carCount;
+        this.attempts = attempts;
     }
 
-    public void carDriving() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("자동차 대수는 몇 대 인가요");
+    public void readToGame() {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("자동차 대수는 몇 대 인가요?");
+        carCount = scn.nextInt();
 
-        int carCount = scanner.nextInt();
-        if (carCount == 0) {
-            throw new IllegalArgumentException("0이 입력되면 예외가 발생한다.");
-        }
-        carAttempts(carCount);
+        System.out.println("시도할 회수는 몇 회 인가요?");
+        attempts = scn.nextInt();
     }
-    public void carAttempts(int carCount) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("시도할 회수는 몇 회인가요?");
-        int attempts = scanner.nextInt();
 
-    }
+
+
 }
