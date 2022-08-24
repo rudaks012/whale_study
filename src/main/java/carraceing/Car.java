@@ -29,5 +29,12 @@ public class Car {
         if (carCount == 0) {
             throw new IllegalArgumentException("0이 입력되면 예외가 발생한다.");
         }
+        carAttempts(carCount);
+    }
+    public void carAttempts(int carCount) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("시도할 회수는 몇 회인가요?");
+        int attempts = scanner.nextInt();
+
     }
 }
