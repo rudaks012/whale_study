@@ -1,15 +1,19 @@
 package carraceing;
 
+import java.util.Random;
+
 public class Car {
+    private Random random = new Random();
+    private final int car;
 
-    private final int carNumber;
-
-    public Car(int carNumber) {
-        if (carNumber == 0 ) {
+    public Car(int car) {
+        if (car == 0 ) {
             throw new IllegalArgumentException();
         }
-        this.carNumber = carNumber;
+        if (Character.isDigit(car)){
+            throw new IllegalArgumentException("문자열이 입력되면 예외가 발생한다.");
+        }
+        this.car = car;
     }
-
 
 }

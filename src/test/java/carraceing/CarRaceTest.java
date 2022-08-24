@@ -4,6 +4,7 @@ package carraceing;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
+import java.util.InputMismatchException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,6 +22,15 @@ class CarRaceTest {
         assertThat(actual).isNotNull();
     }
 
+    @ParameterizedTest(name = "문자열이 들어오면 예외가 발생한다 : [{index}] : [{arguments}]")
+    @ValueSource(strings = {
+        "+", "가", "A"
+    })
+    void throws_exception_insert_string(String input) {
+        assertThatThrownBy(() -> new Car(Integer.parseInt(input)))
+            .isInstanceOf(IllegalArgumentException.class);
+    }
+
     @Test
     @DisplayName("자동차 대수에 0 값이 들어오면 예외가 발생한다.")
     void throws_exception_zero_car_number() {
@@ -29,7 +39,7 @@ class CarRaceTest {
 
     }
 
-    @ParameterizedTest(name = "값이 4 이상이면 전진한다")
+    @ParameterizedTest(name = "값이 4 이상이면 전진한다 : [{index}] : [{arguments}]")
     @ValueSource(ints = {
         4, 5, 6, 7, 8, 9
     })
@@ -37,7 +47,7 @@ class CarRaceTest {
         assertThat(input).isGreaterThan(3);
     }
 
-    @ParameterizedTest(name = "값이 4이하면 이동하지 않는다.")
+    @ParameterizedTest(name = "값이 4이하면 이동하지 않는다. : [{index}] : [{arguments}]")
     @ValueSource(ints = {
         1, 2, 3
     })
