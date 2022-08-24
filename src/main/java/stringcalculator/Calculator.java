@@ -13,12 +13,6 @@ public class Calculator {
     private final String formula;
 
     public Calculator(String formula) {
-        test(formula);
-
-        this.formula = formula;
-    }
-
-    private void test(String formula) {
         if (formula == null || formula.isEmpty()) {
             throw new IllegalArgumentException("null 또는 빈 값이 들어오면 예외가 발생한다.");
         }
@@ -35,9 +29,11 @@ public class Calculator {
             String string = strings[i];
             putNumberAndOperator(string, i % 2 == 0);
         }
+
+        this.formula = formula;
     }
 
-    private void putNumberAndOperator(String string, boolean isNumber) {
+    public void putNumberAndOperator(String string, boolean isNumber) {
         if (isNumber) {
             numbers.add(toInt(string));
             return;

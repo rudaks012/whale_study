@@ -9,7 +9,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
-import yongju.Cal;
 
 class CalculatorTest {
 
@@ -17,9 +16,9 @@ class CalculatorTest {
     @DisplayName("계산기 객체 생성")
     void Create_calculator_object() {
         String formula = "2 + 3";
-        Cal actual = new Cal(formula);
+        Calculator actual = new Calculator(formula);
 
-        assertThat(actual).isEqualTo(new Cal(formula));
+        assertThat(actual).isEqualTo(new Calculator(formula));
     }
 
     @ParameterizedTest(name = "null 또는 빈 값이 들어오면 예외가 발생한다: [{index}]: [{arguments}]")
