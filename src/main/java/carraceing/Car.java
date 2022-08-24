@@ -1,11 +1,15 @@
 package carraceing;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Car {
 
     private int carCount;
     private int attempts;
+
+    private final List<InputView> cars = new ArrayList<>();
 
     public Car(int carCount, int attempts){
         if (carCount == 0) {
@@ -27,6 +31,10 @@ public class Car {
         attempts = scn.nextInt();
     }
 
-
+    private void setCarCount(){
+        for (int i = 0; i <carCount ; i++) {
+            cars.add(new InputView());
+        }
+    }
 
 }
