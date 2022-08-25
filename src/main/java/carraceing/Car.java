@@ -2,16 +2,20 @@ package carraceing;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Car {
 
+    private final List<InputView> cars = new ArrayList<>();
+
+    private Random random = new Random();
     private int carCount;
     private int attempts;
 
-    private final List<InputView> cars = new ArrayList<>();
+    private int position;
 
-    public Car(int carCount, int attempts){
+    public Car(int carCount, int attempts) {
         if (carCount == 0) {
             throw new IllegalArgumentException();
         }
@@ -22,6 +26,14 @@ public class Car {
         this.attempts = attempts;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
+    public void process() {
+        position++;
+    }
+
     public void readToGame() {
         Scanner scn = new Scanner(System.in);
         System.out.println("자동차 대수는 몇 대 인가요?");
@@ -29,12 +41,10 @@ public class Car {
 
         System.out.println("시도할 회수는 몇 회 인가요?");
         attempts = scn.nextInt();
-    }
+        int success = 0;
 
-    private void setCarCount(){
-        for (int i = 0; i <carCount ; i++) {
+        for (int i = 0; i < carCount; i++) {
             cars.add(new InputView());
         }
     }
-
 }
