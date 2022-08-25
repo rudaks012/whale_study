@@ -31,7 +31,9 @@ public class Car {
     }
 
     public void process() {
-        position++;
+        if (4 < random.nextInt(10)) {
+            position++;
+        }
     }
 
     public void readToGame() {
@@ -41,10 +43,17 @@ public class Car {
 
         System.out.println("시도할 회수는 몇 회 인가요?");
         attempts = scn.nextInt();
-        int success = 0;
 
         for (int i = 0; i < carCount; i++) {
             cars.add(new InputView());
+        }
+    }
+
+    private void setAttempts() {
+        for (int i = 0; i < attempts; i++) {
+            for(InputView car : cars){
+                car.tryForward();
+            }
         }
     }
 }
