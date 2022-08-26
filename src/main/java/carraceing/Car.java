@@ -8,12 +8,6 @@ public class Car {
 
     private int position;
 
-    public void forward(boolean forward) {
-        if (!forward) {
-            return;
-        }
-        position++;
-    }
 
     public String getPosition() {
         String result = "";
@@ -22,6 +16,21 @@ public class Car {
         }
         System.out.print("-");
         return result;
+    }
+
+    public void movingCar() {
+        forward(fourMoreMoving());
+    }
+
+    public void forward(boolean forward) {
+        if (!forward) {
+            return;
+        }
+        position++;
+    }
+
+    public boolean fourMoreMoving() {
+        return new Random().nextInt(10) >= 4;
     }
 
     public List<Car> addCarCount(int carCount) {
@@ -36,7 +45,5 @@ public class Car {
         }
         return cars;
     }
-    public boolean fourMoreMoving() {
-        return new Random().nextInt(10) >= 4;
-    }
+
 }
