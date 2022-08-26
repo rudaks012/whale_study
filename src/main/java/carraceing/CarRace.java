@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class CarRace {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     public static void main(String[] args) {
 
@@ -26,9 +26,10 @@ public class CarRace {
 
         for (int i = 0; i < attempts; i++) {
             for (Car car : cars) {
-                car.forward(random.nextInt(10) > 4);
+                car.forward(random.nextInt(10) >= 4);
                 System.out.println(car.getPosition());
             }
+            System.out.println();
         }
     }
 }
