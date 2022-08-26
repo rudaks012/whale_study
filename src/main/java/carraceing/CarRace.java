@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class CarRace {
 
     private static final Random random = new Random();
+    public Object isForward;
 
     public static void main(String[] args) {
 
@@ -18,11 +19,7 @@ public class CarRace {
         System.out.println("시도할 회수는 몇 대인가요?");
         int attempts = scn.nextInt();
 
-        List<Car> cars = new ArrayList<>();
-
-        for (int i = 0; i < carCount; i++) {
-            cars.add(new Car());
-        }
+        List<Car> cars = addCarCount(carCount);
 
         for (int i = 0; i < attempts; i++) {
             for (Car car : cars) {
@@ -31,5 +28,17 @@ public class CarRace {
             }
             System.out.println();
         }
+    }
+
+    public static List<Car> addCarCount(int carCount) {
+        List<Car> cars = new ArrayList<>();
+        if (carCount == 0) {
+            throw new IllegalArgumentException("0값이 들어오면 예외가 발생한다");
+        }
+
+        for (int i = 0; i < carCount; i++) {
+            cars.add(new Car());
+        }
+        return cars;
     }
 }
