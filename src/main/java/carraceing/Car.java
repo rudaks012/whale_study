@@ -2,6 +2,7 @@ package carraceing;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Car {
 
@@ -34,5 +35,8 @@ public class Car {
             cars.add(new Car());
         }
         return cars;
+    }
+    public boolean fourMoreMoving() {
+        return new Random().nextInt(10) >= 4;
     }
 }
