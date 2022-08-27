@@ -5,12 +5,12 @@ import java.util.List;
 public class ResultView {
 
     public void setGameStart(int carCount, int attempts) {
+        Car car = new Car();
 
         if (carCount == 0 && attempts == 0) {
             throw  new IllegalArgumentException("0값이 들어오면 예외가 발생한다");
         }
 
-        Car car = new Car();
         List<Car> cars = car.addCarCount(carCount);
 
         for (int i = 0; i < attempts; i++) {
