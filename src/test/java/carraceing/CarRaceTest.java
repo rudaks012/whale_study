@@ -48,4 +48,17 @@ class CarRaceTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    @DisplayName("전진이 되지 않는다면 Position의 값은 0이다.")
+    void no_forward_position_value_zero() {
+        Car car = new Car();
+
+        car.forward(false);
+
+        int actual = car.getPosition();
+        int expected = 0;
+
+        assertThat(actual).isEqualTo(expected);
+    }
+
 }
