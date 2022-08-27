@@ -24,9 +24,11 @@ public class CarRace {
 
         for (int i = 0; i < attempts; i++) {
             for (Car car : cars) {
-
-                car.forward(random.nextInt(10) >= 4);
-                System.out.println(car.getPosition());
+                car.movingCar();
+                for (int j = 0; j < car.getPosition(); j++) {
+                    System.out.print('-');
+                }
+                System.out.println();
             }
             System.out.println();
         }

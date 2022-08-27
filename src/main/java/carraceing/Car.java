@@ -9,13 +9,8 @@ public class Car {
     private int position;
 
 
-    public String getPosition() {
-        String result = "";
-        for (int i = 1; i < position; i++) {
-            System.out.print("-");
-        }
-        System.out.print("-");
-        return result;
+    public int getPosition() {
+        return position;
     }
 
     public void movingCar() {
