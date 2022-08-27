@@ -9,6 +9,7 @@ public class CarRace {
         ResultView resultView = new ResultView();
 
         Scanner scn = new Scanner(System.in);
+
         System.out.println("자동차 대수는 몇 대 인가요?");
         int carCount = scn.nextInt();
 
