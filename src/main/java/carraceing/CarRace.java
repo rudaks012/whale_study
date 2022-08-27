@@ -1,17 +1,13 @@
 package carraceing;
 
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class CarRace {
 
-    private static final Random random = new Random();
-
-    private static Car car = new Car();
-
 
     public static void main(String[] args) {
+        ResultView resultView = new ResultView();
 
         Scanner scn = new Scanner(System.in);
         System.out.println("자동차 대수는 몇 대 인가요?");
@@ -20,18 +16,6 @@ public class CarRace {
         System.out.println("시도할 회수는 몇 대인가요?");
         int attempts = scn.nextInt();
 
-        List<Car> cars = car.addCarCount(carCount);
-
-        for (int i = 0; i < attempts; i++) {
-            for (Car car : cars) {
-                car.movingCar();
-                for (int j = 0; j < car.getPosition(); j++) {
-                    System.out.print('-');
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
+        resultView.setGameStart(carCount, attempts);
     }
-
 }
