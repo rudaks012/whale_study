@@ -16,13 +16,17 @@ public class ResultView {
         for (int i = 0; i < attempts; i++) {
             for (Car inputView : cars) {
                 inputView.movingCar();
-                for (int j = 0; j < inputView.getPosition(); j++) {
-                    System.out.print("-");
-                }
-                System.out.println();
+                resultPrint(inputView);
             }
             System.out.println();
         }
+    }
+
+    private void resultPrint(Car inputView) {
+        for (int j = 0; j < inputView.getPosition(); j++) {
+            System.out.print("-");
+        }
+        System.out.println();
     }
 
 }
