@@ -31,10 +31,6 @@ public class Car {
     public List<Car> addCarCount(int carCount) {
         List<Car> cars = new ArrayList<>();
 
-        if (carCount == 0) {
-            throw new IllegalArgumentException("0값이 들어오면 예외가 발생한다");
-        }
-
         for (int i = 0; i < carCount; i++) {
             cars.add(new Car());
         }
