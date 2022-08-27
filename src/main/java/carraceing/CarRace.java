@@ -16,6 +16,7 @@ public class CarRace {
         System.out.println("시도할 회수는 몇 대인가요?");
         int attempts = scn.nextInt();
 
+        System.out.println("실행 결과");
         resultView.setGameStart(carCount, attempts);
     }
 }
