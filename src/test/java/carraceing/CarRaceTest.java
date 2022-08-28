@@ -12,6 +12,15 @@ import org.junit.jupiter.params.provider.ValueSource;
 class CarRaceTest {
 
     @Test
+    @DisplayName("입력 받은 값을 split으로 나누고 결과 값이 예상한 결과과 일치하는지 확인")
+    void car_name_split() {
+        String[] actual = "pobi,crong,honux".split(",");
+
+        assertThat(actual).containsExactly("pobi", "crong", "honux");
+
+    }
+
+    @Test
     @DisplayName("0값이 들어오면 예외가 발생확인")
     void throws_exception_zero_insert1() {
         int carCount = 0;
