@@ -1,13 +1,21 @@
 package carraceing;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 public class Car {
 
     private static final int RACE_CONDITION = 4;
     private int position;
+    private final List<String> carList = new ArrayList<>();
+
+    public void addCarList(String[] carNames) {
+        carList.addAll(Arrays.asList(carNames));
+    }
+    public List<String> getCarName(){
+        return carList;
+    }
 
     public int getPosition() {
         return position;

@@ -27,6 +27,9 @@ public class ResultView {
         for (int j = 0; j < inputView.getPosition(); j++) {
             System.out.print("-");
         }
+        for (int i = 0; i < inputView.getPosition(); i++) {
+
+        }
         System.out.println();
     }
 }

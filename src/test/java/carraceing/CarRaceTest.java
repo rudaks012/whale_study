@@ -27,7 +27,7 @@ class CarRaceTest {
         int attempts = 0;
         ResultView resultView = new ResultView();
 
-        assertThatThrownBy(() -> resultView.setGameStart(carCount, attempts))
+        assertThatThrownBy(() -> resultView.setGameStart (carCount, attempts))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("0값이 들어오면 예외가 발생한다");
     }
