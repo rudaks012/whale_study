@@ -7,6 +7,7 @@ import java.util.List;
 public class Car {
 
     private static final int RACE_CONDITION = 4;
+    private static final int CAR_NAME_CONDITION = 5;
     private int position;
     private final List<String> carList = new ArrayList<>();
 
@@ -25,7 +26,7 @@ public class Car {
     }
 
     private static void validateCarNameLength(String carName) {
-        if (carName.length() > 5) {
+        if (carName.length() > CAR_NAME_CONDITION) {
             throw new IllegalArgumentException("자동차 이름이 5글자를 초과하면 예외가 발생한다.");
         }
     }
