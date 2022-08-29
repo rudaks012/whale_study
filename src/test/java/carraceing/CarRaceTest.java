@@ -23,7 +23,7 @@ class CarRaceTest {
     @DisplayName("자동차 이름이 5자를 초과하면 예외가 발생한다.")
     void throws_exception_car_name_five_more() {
         Car car = new Car();
-        assertThatThrownBy(() -> car.carNameFiveMoreException("abcdef"))
+        assertThatThrownBy(() -> car.carNameFiveMoreException(new String[]{"abcedf"}))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름이 5글자를 초과하면 예외가 발생한다.");
     }
