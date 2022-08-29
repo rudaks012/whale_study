@@ -12,20 +12,17 @@ public class Car {
     private final List<String> carList = new ArrayList<>();
 
     public void addCarList(String[] carNames) {
-        carList.addAll(Arrays.asList(carNames));
-    }
-
-    public List<String> getCarName(){
-        return carList;
-    }
-
-    public void carNameFiveMoreException(String[] carNames) {
         for (String carName : carNames) {
             validateCarNameLength(carName);
         }
+        carList.addAll(Arrays.asList(carNames));
     }
 
-    private static void validateCarNameLength(String carName) {
+    public List<String> getCarName() {
+        return carList;
+    }
+
+    public void validateCarNameLength(String carName) {
         if (carName.length() > CAR_NAME_CONDITION) {
             throw new IllegalArgumentException("자동차 이름이 5글자를 초과하면 예외가 발생한다.");
         }

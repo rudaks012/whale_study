@@ -16,8 +16,6 @@ public class CarRace {
 
         String[] carNames = carName.split(",");
 
-        car.carNameFiveMoreException(carNames);
-
         car.addCarList(carNames);
 
         int carCount = carNames.length;
