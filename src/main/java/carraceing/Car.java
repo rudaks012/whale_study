@@ -13,8 +13,15 @@ public class Car {
     public void addCarList(String[] carNames) {
         carList.addAll(Arrays.asList(carNames));
     }
+
     public List<String> getCarName(){
         return carList;
+    }
+
+    public void carNameFiveMoreException(String carName) {
+        if(carName.length() > 5) {
+            throw new IllegalArgumentException("자동차 이름이 5글자를 초과하면 예외가 발생한다.");
+        }
     }
 
     public int getPosition() {
